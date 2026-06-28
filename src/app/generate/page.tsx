@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { QrCode, Barcode, CreditCard, ArrowRight, Sparkles, Zap, Shield, Download, Palette } from "lucide-react";
 import { RelatedTools } from "@/components/seo/RelatedTools";
+import { SITE_URL } from "@/lib/constants";
 import AnimatedGradientText from "@/components/animations/animated-gradient-text";
 import TiltCard from "@/components/animations/tilt-card";
 import FloatingElement from "@/components/animations/floating-element";
@@ -73,8 +74,8 @@ function GenerateJsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://qrigo.vercel.app" },
-          { "@type": "ListItem", position: 2, name: "Generate", item: "https://qrigo.vercel.app/generate" },
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Generate", item: `${SITE_URL}/generate` },
         ],
       },
       {
@@ -83,9 +84,9 @@ function GenerateJsonLd() {
         description: "Choose from QR Code, Barcode, or Business Card QR generators.",
         numberOfItems: 3,
         itemListElement: [
-          { "@type": "SiteNavigationElement", position: 1, name: "QR Code Generator", url: "https://qrigo.vercel.app/generate/qr" },
-          { "@type": "SiteNavigationElement", position: 2, name: "Barcode Generator", url: "https://qrigo.vercel.app/generate/barcode" },
-          { "@type": "SiteNavigationElement", position: 3, name: "Contact Card QR Generator", url: "https://qrigo.vercel.app/generate/contact" },
+          { "@type": "SiteNavigationElement", position: 1, name: "QR Code Generator", url: `${SITE_URL}/generate/qr` },
+          { "@type": "SiteNavigationElement", position: 2, name: "Barcode Generator", url: `${SITE_URL}/generate/barcode` },
+          { "@type": "SiteNavigationElement", position: 3, name: "Contact Card QR Generator", url: `${SITE_URL}/generate/contact` },
         ],
       },
     ],

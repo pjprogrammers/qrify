@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useQRStore } from "@/store/qrStore";
@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
-import { QrCode, ArrowLeft, Palette, Settings, Download, Type, Globe, Mail, Phone, MessageSquare, MessageCircle, Wifi, MapPin, Calendar, CreditCard } from "lucide-react";
+import { QrCode, ArrowLeft, Palette, Settings, Download, Share2, Type, Globe, Mail, Phone, MessageSquare, MessageCircle, Wifi, MapPin, Calendar, CreditCard } from "lucide-react";
 import { RelatedTools } from "@/components/seo/RelatedTools";
 
 const qrTypes = [
@@ -34,6 +34,7 @@ const qrTypes = [
 
 function QRGeneratorPageInner() {
   const [tab, setTab] = React.useState("theme");
+  const qrCardRef = useRef<{ handleDownload: () => void; handleShare: () => void }>(null);
 
   const searchParams = useSearchParams();
 
@@ -190,7 +191,7 @@ function QRGeneratorPageInner() {
 
               <Card className="p-6">
                 <div className="flex flex-col items-center">
-                  {currentData ? <QRCard /> : (
+                  {currentData ? <QRCard ref={qrCardRef} /> : (
                     <div className="flex flex-col items-center justify-center py-16 text-center">
                       <div className="w-16 h-16 rounded-2xl bg-neutral-100 flex items-center justify-center mb-4">
                         <QrCode className="w-8 h-8 text-neutral-300" />
@@ -200,6 +201,18 @@ function QRGeneratorPageInner() {
                   )}
                 </div>
               </Card>
+              {currentData && (
+                <div className="flex gap-3">
+                  <Button variant="gradient" onClick={() => qrCardRef.current?.handleDownload()} className="gap-2">
+                    <Download className="w-4 h-4" />
+                    Download
+                  </Button>
+                  <Button variant="outline" onClick={() => qrCardRef.current?.handleShare()} className="gap-2">
+                    <Share2 className="w-4 h-4" />
+                    Share
+                  </Button>
+                </div>
+              )}
             </div>
 
             <div className="space-y-6">

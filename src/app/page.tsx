@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { Scene } from "@/components/three/Scene";
+import { SITE_URL } from "@/lib/constants";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -49,7 +50,7 @@ export default function Home() {
         type="WebApplication"
         name="Qrigo"
         description="Create QR codes, barcodes, WiFi QR codes, business cards, and scan QR codes online for free."
-        url={process.env.NEXT_PUBLIC_SITE_URL || "https://qrigo.vercel.app"}
+        url={SITE_URL}
         applicationCategory="UtilityApplication"
         operatingSystem="Web"
       />

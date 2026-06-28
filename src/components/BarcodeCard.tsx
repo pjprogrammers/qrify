@@ -49,7 +49,7 @@ export function BarcodeCard() {
         backgroundColor: "#ffffff",
       });
       const link = document.createElement("a");
-      link.download = "qrify-card.png";
+      link.download = "qrigo-card.png";
       link.href = dataUrl;
       document.body.appendChild(link);
       link.click();

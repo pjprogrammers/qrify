@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     "QR Code",
     "Barcode",
   ],
+  verification: {
+  google: "yD0EuT3GHCroc_8sUd70Nt-puSwrlKEdsar7YRDcx_M",
+  },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,

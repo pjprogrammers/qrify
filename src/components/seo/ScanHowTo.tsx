@@ -1,6 +1,7 @@
 "use client";
 
 import { Camera, Upload, Scan, CheckCircle2 } from "lucide-react";
+import { SITE_URL } from "@/lib/constants";
 
 const stepsCamera = [
   {
@@ -116,8 +117,8 @@ function HowToSchemas() {
         "@type": "HowToStep",
         position: 1,
         name: "Open Qrigo scanner",
-        text: "Navigate to the scanner page at qrigo.vercel.app/scan. Select the Camera tab and choose QR Code or Barcode mode.",
-        url: "https://qrigo.vercel.app/scan",
+        text: `Navigate to the scanner page at ${SITE_URL.replace("https://", "")}/scan. Select the Camera tab and choose QR Code or Barcode mode.`,
+        url: `${SITE_URL}/scan`,
       },
       {
         "@type": "HowToStep",
@@ -147,8 +148,8 @@ function HowToSchemas() {
         "@type": "HowToStep",
         position: 1,
         name: "Open Qrigo scanner",
-        text: "Go to qrigo.vercel.app/scan. Click the Upload tab to switch to image upload mode.",
-        url: "https://qrigo.vercel.app/scan",
+        text: `Go to ${SITE_URL.replace("https://", "")}/scan. Click the Upload tab to switch to image upload mode.`,
+        url: `${SITE_URL}/scan`,
       },
       {
         "@type": "HowToStep",
