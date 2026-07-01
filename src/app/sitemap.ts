@@ -3,8 +3,6 @@ import { SITE_URL } from "@/lib/constants";
 
 const siteLastModified = new Date();
 
-export const revalidate = 86400;
-
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
